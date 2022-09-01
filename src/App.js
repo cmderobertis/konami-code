@@ -1,25 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react"
+import CodeDisplay from "./components/CodeDisplay"
+import "./App.css"
 
 function App() {
+  const [codeCompleted, setCodeCompleted] = useState(false)
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <CodeDisplay setCodeCompleted={setCodeCompleted} />
+      {codeCompleted ? <h1>Konami Code? What a nerd 😋</h1> : <h1> </h1>}
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
